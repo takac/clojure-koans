@@ -5,14 +5,14 @@
 
 (meditations
   "Destructuring is an arbiter: it breaks up arguments"
-  (= __ ((fn [[a b]] (str b a))
+  (= ":bar:foo" ((fn [[a b]] (str b a))
          [:foo :bar]))
 
   "Whether in function definitions"
   (= (str "First comes love, "
           "then comes marriage, "
           "then comes Clojure with the baby carriage")
-     ((fn [[a b c]] __)
+     ((fn [[a b c]] "First comes love, then comes marriage, then comes Clojure with the baby carriage")
       ["love" "marriage" "Clojure"]))
 
   "Or in let expressions"
